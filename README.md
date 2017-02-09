@@ -1,7 +1,7 @@
 Blank Share
 ====
 
-Blank Shareとは・・・・
+Blank Shareとは・・・・・
 
 ## Problem
 
@@ -19,5 +19,3 @@ Blank Shareとは・・・・
 
 
 ## Business Model
-
-
