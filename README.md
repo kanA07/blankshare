@@ -2,7 +2,7 @@ Blank Share
 ====
 
 Blank Shareとは・・・・・
-
+blank を share　することです。
 ## Problem
 
 
