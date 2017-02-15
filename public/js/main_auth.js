@@ -60,7 +60,7 @@ Main.prototype.fbAuthOpts = function(scope){
       if(window.currentUser && window.currentUser.admin){
         scope.newPostButton.style.display = 'none';
       }
-      scope.organizationSelect.style.display = 'none';
+      // scope.organizationSelect.style.display = 'none';
       window.currentUser = null;
       scope.openSection(['login-section'], true);
       console.log('after auth state changed off');
