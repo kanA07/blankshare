@@ -1,0 +1,54 @@
+<div class="container">
+  <form id="newPost-form" onsubmit="return false;">
+    <div class="columns is-multiline">
+      <div class="column is-half">
+        <label class="label">Title</label>
+        <p class="control">
+          <input id="title-input" class="input" type="text" placeholder="Title">
+        </p>
+        <label class="label">Tags</label>
+        <p class="control">
+          <input id="tags-input" class="input" type="text" placeholder="Tags separated by comma(,)">
+        </p>
+      </div>
+      <div class="column is-half">
+        <label class="label">Image</label>
+        <p class="control">
+          <input id="file-input" type="file" accept="image/*,capture=camera">
+        </p>
+        <label class="label">Image Display Style</label>
+        <p class="control">
+          <label class="radio">
+            <input id="display-input-cover" type="radio" name="display" value="cover">
+            Cover
+          </label>
+          <label class="radio">
+            <input id="display-input-contain" type="radio" name="display" value="contain" checked>
+            Contain
+          </label>
+        </p>
+        <p>
+          <figure class="image is-2by1">
+            <img id="postFile">
+          </figure>
+        </p>
+      </div>
+      <div class="column is-fullwidth">
+        <label class="label">Article</label>
+        <p class="control">
+          <textarea id="article-input" class="textarea" placeholder="Textarea"></textarea>
+        </p>
+        <p class="control">
+          <div id="newPost-message" class="notification is-danger" style="display:none;">
+            <button class="delete" onclick="this.parentNode.style.display = 'none';"></button>
+            <span id="newPost-message-text"></span>
+          </div>
+        </p>
+        <hr>
+        <p class="control">
+          <button id="post-button" type="submit" class="button is-primary">Post</button>
+        </p>
+      </div>
+    </div>
+  </form>
+</div>

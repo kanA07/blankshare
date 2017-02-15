@@ -1,0 +1,116 @@
+section.is-fullheight{
+  margin-top: -50px;
+  padding-top: 50px;
+}
+
+div.card-image{
+  height: 160px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+div.contain{
+  background-size: contain;
+  background-origin: content-box;
+  padding: 3px 0;
+}
+div.cover{
+  background-size: cover;
+}
+div.card-image{
+  transition: all .3s ease-out;
+}
+
+div.card-image:hover{
+  transform: scale(1.05);
+}
+
+article.card{
+  background-color: whitesmoke;
+  cursor: pointer;
+  height: 100%;
+}
+
+div.featured-post{
+  cursor:pointer;
+}
+
+img#postFileImg{
+  max-height: 256px;
+}
+img#groupFileImg{
+  width: 100%;
+  cursor:pointer;
+}
+div.modal-content{
+  width: 80vw;
+}
+
+div.bg01{background-color: #7b9ad0}
+div.bg02{background-color: #f8e352}
+div.bg03{background-color: #c8d627}
+div.bg04{background-color: #d5848b}
+div.bg05{background-color: #e5ab47}
+div.bg06{background-color: #e1cea3}
+div.bg07{background-color: #51a1a2}
+div.bg08{background-color: #b1d7e4}
+div.bg09{background-color: #66b7ec}
+div.bg10{background-color: #c08e47}
+div.bg11{background-color: #ae8dbc}
+div.bg12{background-color: #c3cfa9}
+
+/*div.cardheader img{
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+}
+
+div.card{
+  cursor: pointer;
+  background-color: whitesmoke;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+}
+div.card img{
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+}*/
+div.card:hover, div.cardheader:hover{
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+div.lesson:hover{
+  background-color: whitesmoke;
+}
+
+span.tag{
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+figure.video{
+  width:100%;
+  padding-bottom: 56.25%;
+  height:0px;
+  position: relative;
+}
+
+figure.video iframe{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

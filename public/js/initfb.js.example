@@ -1,0 +1,7 @@
+// paste your firebase config
+var config = {
+  apiKey: "xxxxxxxxxxx",
+  authDomain: "xxxxxxxxxx.firebaseapp.com",
+  databaseURL: "https://xxxxxxxxxx.firebaseio.com"
+};
+firebase.initializeApp(config);
