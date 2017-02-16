@@ -1,9 +1,10 @@
-Main.LOADING_IMAGE_URL = '/img/spin.gif';
+// Main.LOADING_IMAGE_URL = '/img/spin.gif';
+Main.LOADING_IMAGE_URL = '/img/infinite-gif-preloader.gif';
 Main.DEFAULT_IMAGEURL = 'https://firebasestorage.googleapis.com/v0/b/fbblog-e9a62.appspot.com/o/0%2Fbooks-1245744_1920.jpg?alt=media&token=577c6bf6-00ab-4c1d-9452-f8eef68c7065';
 
 Main.CARD_TEMPLATE = [
   '<article class="card">',
-    '<div class="card-image contain"></div>',
+    '<div class="card-image cover"></div>',
     '<div class="card-content">',
       '<div class="media">',
         '<div class="media-content">',

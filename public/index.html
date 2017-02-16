@@ -103,11 +103,11 @@
 <section id="main-section" class="hero" style="display:none;">
 </section>
 
-<section id="main-body-section" class="section" style="display:none;">
+<section id="main-body-section" class="section" style="display:block;">
 
   <div class="container">
     <div class="columns is-mobile" style="display:none;">
-      <div class="column is-quater-tablet is-half-mobile">
+      <div class="column is-4-tablet is-6-mobile">
         <p class="control">
           <span class="select is-fullwidth">
             <select>
@@ -123,13 +123,13 @@
               <option value="g8">中2</option>
               <option value="g9">中3</option>
               <option value="g10">高1</option>
-              <option value="g11">高2</option>
+              <option value="g11" selected>高2</option>
               <option value="g12">高3</option>
             </select>
           </span>
         </p>
       </div>
-      <div class="column is-quater-tablet is-half-mobile">
+      <div class="column is-4-tablet is-6-mobile">
         <p class="control">
           <span class="select is-fullwidth">
             <select>
@@ -143,27 +143,6 @@
               <option>国語</option>
               <option>社会</option>
               <option>英語</option>
-            </select>
-          </span>
-        </p>
-      </div>
-      <div class="column is-quater-tablet is-half-mobile">
-        <p class="control">
-          <span class="select is-fullwidth">
-            <select>
-              <option>時間数</option>
-              <option>45分</option>
-              <option>90分</option>
-            </select>
-          </span>
-        </p>
-      </div>
-      <div class="column is-quater-tablet is-half-mobile">
-        <p class="control">
-          <span class="select is-fullwidth">
-            <select>
-              <option>必要物品</option>
-              <option>With options</option>
             </select>
           </span>
         </p>
@@ -192,42 +171,12 @@
           </div>
           <h1 id="postTitle" class="title"></h1>
         </div>
-        <div class="column has-text-centered">
-          <img id="postFileImg">
-        </div>
-        <div class="column">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-users"></i>
-                  </a>
-                </td>
-                <td>学年</td>
-                <td>小学校4年生</td>
-              </tr>
-              <tr>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-leanpub"></i>
-                  </a>
-                </td>
-                <td>教科</td>
-                <td>理科</td>
-              </tr>
-              <tr>
-                <td class="is-icon">
-                  <a href="#">
-                    <i class="fa fa-calendar"></i>
-                  </a>
-                </td>
-                <td>時間数</td>
-                <td>2時間(45分×2)</td>
-              </tr>
-            </tbody>
-          </table>
-          <span id="postCreatedAt"></span>
+        <div class="column is-12">
+          <div class="content is-medium">
+            <input id="postId-hidden" type="hidden">
+            <div id="article-block"></div>
+            <div id="post-tags" class="tags"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -239,65 +188,9 @@
 
     <div class="columns is-multiline">
       <div class="column is-12">
-        <div class="content is-medium">
-          <input id="postId-hidden" type="hidden">
-          <div id="article-block"></div>
-        </div>
-      </div>
-      <div class="column is-12">
-        <div class="tabs is-boxed is-medium">
-          <ul>
-            <li class="is-active">
-              <a>
-                <span class="icon is-small">
-                  <i class="fa fa-tasks"></i>
-                </span>
-                <span>まとめムービー</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="column is-12">
-        <figure class="video">
-          <iframe id="movie" src="about:blank" frameborder="0" allowfullscreen></iframe>
+        <figure class="image">
+          <img id="postFileImg">
         </figure>
-      </div>
-    </div>
-
-    <div class="columns is-multiline">
-      <div class="column is-12">
-        <div class="tabs is-boxed is-medium">
-          <ul>
-            <li class="is-active">
-              <a>
-                <span class="icon is-small">
-                  <i class="fa fa-tasks"></i>
-                </span>
-                <span>各班の活動</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-multiline" id="groups-block">
-      <div class="column is-fullwidth has-text-centered">
-        <a class="button is-link is-loading is-large">&nbsp;</a>
-      </div>
-    </div>
-
-    <div class="columns is-multiline">
-      <div class="column is-1">
-        <span id="newGroup-button" style="display:none;">
-          <a class="button">
-            <span class="icon">
-              <i class="fa fa-plus"></i>
-            </span>
-            <span>New Group</span>
-          </a>
-        </span>
       </div>
     </div>
 
@@ -426,49 +319,13 @@
           <p class="control">
             <input id="tags-input" class="input" type="text" placeholder="Tags separated by comma(,)">
           </p>
-          <label class="label">学年</label>
-          <p class="control">
-            <span class="select">
-              <select id="grade-input">
-                <option value="4">4年生</option>
-                <option value="5">5年生</option>
-              </select>
-            </span>
-          </p>
-          <label class="label">教科</label>
-          <p class="control">
-            <span class="select">
-              <select id="subject-input">
-                <option value="science">理科</option>
-                <option value="math">算数</option>
-              </select>
-            </span>
-          </p>
-          <label class="label">実施日</label>
-          <p class="control">
-            <input id="date-input" class="input" type="date">
-          </p>
-          <label class="label">まとめ動画 URL(Youtube)</label>
-          <p class="control">
-            <input id="movie-input" class="input" type="url" placeholder="https://www.youtube.com/watch?v=AAAAAAAAAAA">
-          </p>
         </div>
         <div class="column is-half">
           <label class="label">Image</label>
           <p class="control">
             <input id="file-input" type="file" accept="image/*,capture=camera">
           </p>
-          <label class="label">Image Display Style</label>
-          <p class="control">
-            <label class="radio">
-              <input id="display-input-cover" type="radio" name="display" value="cover">
-              Cover
-            </label>
-            <label class="radio">
-              <input id="display-input-contain" type="radio" name="display" value="contain" checked>
-              Contain
-            </label>
-          </p>
+          <input id="display-input-cover" type="hidden" name="display" value="cover">
           <p>
             <figure class="image is-2by1">
               <img id="postFile">
@@ -476,7 +333,7 @@
           </p>
         </div>
         <div class="column is-fullwidth">
-          <label class="label">Article</label>
+          <label class="label">Description</label>
           <p class="control">
             <textarea id="article-input" class="textarea" placeholder="Textarea"></textarea>
           </p>
@@ -505,10 +362,6 @@
           <p class="control">
             <input id="group-title-input" class="input" type="text" placeholder="Title">
           </p>
-          <label class="label">制作物動画 URL(Youtube)</label>
-          <p class="control">
-            <input id="group-movie-input" class="input" type="url" placeholder="https://www.youtube.com/watch?v=AAAAAAAAAAA">
-          </p>
         </div>
 
         <div class="column is-half">
@@ -534,7 +387,7 @@
           </p>
         </div>
         <div class="column is-fullwidth">
-          <label class="label">Article</label>
+          <label class="label">Description</label>
           <p class="control">
             <textarea id="group-article-input" class="textarea" placeholder="Textarea"></textarea>
           </p>
@@ -561,7 +414,7 @@
         <span class="icon">
           <i class="fa fa-fire"></i>
         </span>
-        <strong>学びポートフォリオ</strong>
+        <strong>Blank Share</strong>
       </p>
     </div>
   </div>
@@ -571,7 +424,7 @@
   <div id="imgmodal-bg" class="modal-background"></div>
   <div class="modal-content">
     <p class="image">
-      <img id="imgmodal-image" src="http://bulma.io/images/placeholders/1280x960.png">
+      <img id="imgmodal-image" src="javascript:void();">
     </p>
   </div>
   <button class="modal-close"></button>

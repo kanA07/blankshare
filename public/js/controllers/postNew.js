@@ -6,10 +6,6 @@ Main.prototype.postNew = function(){
     return;
   }
   var tagsInput = document.getElementById('tags-input');
-  var gradeInput = document.getElementById('grade-input');
-  var subjectInput = document.getElementById('subject-input');
-  var dateInput = document.getElementById('date-input');
-  var movieInput = document.getElementById('movie-input');
   var fileInput = document.getElementById('file-input');
   var articleObj = tinyMCE.get('article-input');
   if(articleObj.getContent() === ''){
@@ -21,10 +17,6 @@ Main.prototype.postNew = function(){
     title: titleInput.value,
     tags: tagsInput.value,
     article: articleObj.getContent(),
-    subject: subjectInput.value,
-    grade: gradeInput.value,
-    date: dateInput.value,
-    movie: movieInput.value,
     created_at: firebase.database.ServerValue.TIMESTAMP,
     uid: currentUser.uid
   };
@@ -44,10 +36,6 @@ Main.prototype.postNew = function(){
     // this.openSection(['main-section', 'main-body-section']);
     titleInput.value = "";
     tagsInput.value = "";
-    gradeInput.value = "";
-    subjectInput.value = "";
-    dateInput.value = "";
-    movieInput.value = "";
     articleObj.setContent('');
     fileInput.value = "";
     var stateData = {

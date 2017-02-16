@@ -35,11 +35,7 @@ div.featured-post{
 }
 
 img#postFileImg{
-  max-height: 256px;
-}
-img#groupFileImg{
-  width: 100%;
-  cursor:pointer;
+  /*max-height: 256px;*/
 }
 div.modal-content{
   width: 80vw;

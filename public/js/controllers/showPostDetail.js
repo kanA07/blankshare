@@ -10,6 +10,23 @@ Main.prototype.showPostDetail = function(post, callback){
     return article;
   };
 
+  var createTags = function(post){
+    var tagSpans = [];
+    if(post.tags && post.tags.length > 0){
+      post.tags.split(',').forEach(function(tag, idx){
+        var tagSpan = [
+          '<span class="tag is-success ',
+          idx < 2 ? '' : 'is-hidden-mobile',
+          '">',
+          tag.trim(),
+          '</span>'
+        ].join('');
+        tagSpans.push(tagSpan);
+      });
+    }
+    return tagSpans.join('');
+  };
+
   var createGroupCard = function(post, item){
      if(document.getElementById('group-' + item.id)) return null;
      var card = document.createElement('div');
@@ -38,44 +55,14 @@ Main.prototype.showPostDetail = function(post, callback){
      return card;
   };
 
-  var drawGroups = function(post){
-
-    var ref = this.groupsDbRef.child(post.id).orderByChild('title').limitToLast(12);
-    ref.once('value').then(function(snapshot) {
-      var items = [];
-      snapshot.forEach(function(cSnapshot){
-        var id = cSnapshot.key;
-        var item = cSnapshot.val();
-        items.push(item);
-      }.bind(this));
-
-      this.groupsBlock.innerHTML = '';
-      for(var i = 0; i < items.length; i++){
-        var group = items[i];
-        var card = createGroupCard.bind(this)(post, group);
-        this.groupsBlock.appendChild(card);
-      }
-    }.bind(this));
-
-    if(currentUser.admin){
-      document.getElementById('newGroup-button').style.display = 'block';
-      this.newPostButton = document.getElementById('newGroup-button');
-      this.newPostButton.addEventListener('click', function(){
-        this.changeState('newGroup', {post: post}, true);
-      }.bind(this));
-    }
-
-
-  };
 
   var drawDetail = function(post){
     this.articleBlock.innerHTML = createDetailBody(post);
-    drawGroups.bind(this)(post);
     var postTitle = document.getElementById('postTitle');
     postTitle.innerHTML = post.title;
 
-    var postCreatedAt = document.getElementById('postCreatedAt');
-    postCreatedAt.innerHTML = (new Date(post.created_at)).toLocaleDateString();
+    var tags = document.getElementById('post-tags');
+    tags.innerHTML = createTags(post);
 
     var postFileImg = document.getElementById('postFileImg');
     var url = '';
@@ -85,14 +72,6 @@ Main.prototype.showPostDetail = function(post, callback){
       url = this.defaults.imageUrl;
     }
     this.setImageUrl(url, postFileImg, false, 'small');
-
-    var yid = tool.getYoutubeId(post.movie);
-    console.log(yid);
-    if(yid){
-      var movieIframe = document.getElementById('movie');
-      var yembedUrl = "https://www.youtube.com/embed/" + yid + "?rel=0&showinfo=0";
-      movieIframe.setAttribute('src', yembedUrl);
-    }
 
     var editPostButton = document.getElementById('editPost-button');
     if(currentUser.uid === post.uid){
