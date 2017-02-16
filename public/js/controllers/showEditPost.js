@@ -25,18 +25,6 @@ Main.prototype.showEditPost = function(post, callback){
       postFile.style.display = 'none';
     }
 
-    var gradeInput = document.getElementById('grade-input');
-    gradeInput.value = post.grade;
-
-    var subjectInput = document.getElementById('subject-input');
-    subjectInput.value = post.subject;
-
-    var dateInput = document.getElementById('date-input');
-    dateInput.value = post.date;
-
-    var movieInput = document.getElementById('movie-input');
-    movieInput.value = post.movie || '';
-
     this.openSection([this.newPostSection.id], true);
     callback(post);
   }.bind(this);

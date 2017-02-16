@@ -82,7 +82,7 @@ Main.prototype.createListCard = function(item){
   if(item.title instanceof Array){
     card.querySelector('p.title').innerHTML = item.title.join('<br>');
   } else {
-    card.querySelector('p.title').textContent = title;
+    card.querySelector('p.title').textContent = item.title;
   }
   var tagSpans = [];
   if(item.tags && item.tags.length > 0){
