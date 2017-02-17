@@ -10,7 +10,7 @@ blank を share　することです。
 
 
 ## Market Size
-
+期末試験前の学生
 
 ## Traction
 
