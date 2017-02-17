@@ -19,3 +19,4 @@ blank を share　することです。
 
 
 ## Business Model
+学校に売ったり、アップストアで購入できるようにする。
