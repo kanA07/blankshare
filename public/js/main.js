@@ -37,6 +37,9 @@ Main.prototype.init = function() {
   this.groupPostButton = document.getElementById('group-post-button');
   this.groupPostButton.addEventListener('click', this.postNewGroup.bind(this));
 
+  this.attachStickyButton = document.getElementById('attach-sticky-button');
+  this.attachStickyButton.addEventListener('click', this.toggleAnnotate.bind(this));
+
   this.db = firebase.database();
   this.postsDbRef = this.db.ref('/posts/');
   this.groupsDbRef = this.db.ref('/groups/');
@@ -184,19 +187,6 @@ Main.prototype.changeState = function(stateCd, data, isPushState){
       };
       tool.pushState(stateData, stateCd, '/posts/' + id);
     });
-  } else if(stateCd === 'groupDetail'){
-    if(!data || !data.post || !data.group) return;
-    post = data.post;
-    group = data.group;
-    this.showGroupDetail(post, group, function(post, group){
-      var stateData = {
-        stateCd: stateCd,
-        post: post,
-        group: group
-      };
-      tool.pushState(stateData, stateCd, '/posts/' + post.id + '/groups/' + group.id);
-    });
-
   } else if(stateCd === 'newPost'){
     this.showNewPost(function(){
       var stateData = {
@@ -214,31 +204,6 @@ Main.prototype.changeState = function(stateCd, data, isPushState){
         post: post
       };
       tool.pushState(stateData, stateCd, '/posts/' + id + '/edit');
-    });
-  } else if(stateCd === 'newGroup'){
-    if(!data || !data.post) return;
-    post = data.post;
-    this.showNewGroup(post, function(){
-      var id = post.id;
-      var stateData = {
-        stateCd: stateCd,
-        post: post
-      };
-      tool.pushState(stateData, stateCd, '/posts/' + id + '/new');
-    });
-  } else if(stateCd === 'editGroup'){
-    if(!data || !data.post) return;
-    post = data.post;
-    group = data.group;
-    this.showEditGroup(post, group, function(){
-      var postId = post.id;
-      var groupId = group.id;
-      var stateData = {
-        stateCd: stateCd,
-        post: post,
-        group: group
-      };
-      tool.pushState(stateData, stateCd, '/posts/' + post.id + '/groups/' + group.id + '/edit');
     });
   }
 };

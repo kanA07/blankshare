@@ -99,7 +99,13 @@ Main.prototype.showPostDetail = function(post, callback){
 
   var attachStickyButton = document.getElementById('attach-sticky-button');
   attachStickyButton.style.display = 'none';
-  attachStickyButton.addEventListener('click', this.toggleAnnotate.bind(this));
+
+  var imgBlock = document.getElementById('postFileImgBlock');
+  var stickies = imgBlock.querySelectorAll('div.sticky');
+  for(var i = 0, len = stickies.length; i < len; i++){
+    var sticky = stickies[i];
+    imgBlock.removeChild(sticky);
+  }
 
   if(post.id && (!post.title || !post.article)){
     var ref = main.postsDbRef.child(post.id);
@@ -187,9 +193,8 @@ Main.prototype.toggleAnnotate = function(){
     note.style.height = notePos.h/ch*100.0 + '%';
     note.classList.add('sticky');
     note.addEventListener('click', removeNote);
-
-    var block = document.getElementById('postFileImgBlock');
-    block.appendChild(note);
+    var imgBlock = document.getElementById('postFileImgBlock');
+    imgBlock.appendChild(note);
   };
 
   var removeNote = function(){
