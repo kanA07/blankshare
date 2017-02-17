@@ -7,7 +7,9 @@ blank を share　することです。
 
 
 ## Solution
-
+問題作成アプリ
+とった写真を穴埋め問題にする
+それをシェアする
 
 ## Market Size
 
