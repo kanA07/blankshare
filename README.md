@@ -4,7 +4,7 @@ Blank Share
 Blank Shareとは・・・・・
 blank を share　することです。
 ## Problem
-
+勉強がやりにくいのだ～
 
 ## Solution
 問題作成アプリ
